@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   scope defaults: { format: 'json' } do
     resources :users, only: [:show, :create, :update, :destroy]
+    resources :messages, only: [:index, :create]
   end
 
   # this needs to go last!
