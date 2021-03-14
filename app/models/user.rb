@@ -17,6 +17,9 @@
 #  index_users_on_token  (token) UNIQUE
 #
 class User < ApplicationRecord
+  has_many :recipients
+  has_many :messages, through: :recipients
+
   validates :token, presence: true, uniqueness: true
   validates :first_name, :last_name, presence: true, length: { maximum: 100 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 100 }

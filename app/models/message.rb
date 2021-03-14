@@ -18,6 +18,10 @@
 #
 class Message < ApplicationRecord
   belongs_to :sender, class_name: :User
+  has_many :recipients
+  has_many :users, through: :recipients
+
+  scope :unread, -> { where(recipients: { read_at: nil }) }
 
   validates :content, presence: true
 end
