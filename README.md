@@ -40,8 +40,8 @@ Authorization token_hash
 Accept application/json
 Content-Type application/json
 ```
-#### Body
-```
-{
-}
-```
+
+## Access API docs
+
+#### URL
+http://localhost:8080
