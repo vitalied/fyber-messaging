@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  resources :apischema, only: :index
+
   # this needs to go last!
   match '/:anything', to: 'application_public#routing_error', constraints: { anything: /.*/ }, via: :all
 

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include Swagger::Blocks
   include ExceptionHandling
 
   before_action :authorize_user!

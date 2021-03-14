@@ -17,6 +17,8 @@
 #  index_users_on_token  (token) UNIQUE
 #
 class User < ApplicationRecord
+  include Swaggers::UserModel
+
   has_many :recipients
   has_many :messages, through: :recipients
 

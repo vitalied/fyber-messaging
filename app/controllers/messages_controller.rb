@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  include Swaggers::MessagesController
+
   # GET /messages
   def index
     @messages = current_user.messages.unread.to_a

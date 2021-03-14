@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include Swaggers::UsersController
+
   skip_before_action :authorize_user!, only: [:show, :create]
 
   before_action :set_user, only: [:show, :update, :destroy]
