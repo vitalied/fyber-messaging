@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  scope defaults: { format: 'json' } do
+    resources :users, only: [:show, :create, :update, :destroy]
+  end
+
   # this needs to go last!
   match '/:anything', to: 'application_public#routing_error', constraints: { anything: /.*/ }, via: :all
 
